@@ -38,12 +38,16 @@ public class RocketProcessor {
 
     }
 
+    private ArrayList<Launch> launches = null;
     public ArrayList<Launch> getLauchs() {
         try {
-            return RocketREST.getInstance().getLauchs();
+            if (launches == null) {
+                launches = RocketREST.getInstance().getLauchs();
+            }
         } catch (IOException e) {
             return null;
         }
+        return launches;
     }
 
 
