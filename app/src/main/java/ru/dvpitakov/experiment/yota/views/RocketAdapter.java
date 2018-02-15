@@ -77,6 +77,7 @@ public class RocketAdapter extends BaseAdapter {
                     , position
                     , launch.missionPatch
             );
+            Log.d("999", "missionPatch: " + launch.missionPatch);
         }
         else {
             ViewGroup parento = ((ViewGroup)imageView.getParent());

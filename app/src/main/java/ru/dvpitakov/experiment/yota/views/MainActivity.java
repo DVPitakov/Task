@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Ser
                 Log.d("9999", "GGG");
                 if(target != null && bitmap != null) {
                     target.setImageBitmap(bitmap);
+                    launchArrayAdapter.notifyDataSetChanged();
                 }
                 break;
             }
