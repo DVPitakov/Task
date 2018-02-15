@@ -69,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Ser
                 int key = bundle.getInt(ServiceHelper.DATA_IMAGE_ID);
                 Bitmap bitmap = bundle.getParcelable(ServiceHelper.DATA_IMAGE);
                 ImageView target = imageForUpdating.get(key);
-                Log.d("tttttt", "KEY: "  + key + " bm:" + bitmap + " tg:" + target);
+                Log.d("tttttt", "KEY: "  + key + " bm:" + bitmap + " tg:" + target + "bitmspW" + bitmap.getWidth());
                 if(target != null && bitmap != null) {
                     target.setImageBitmap(bitmap);
-                    imageForUpdating.delete(key);
+                    //imageForUpdating.delete(key);
                 }
                 break;
             }

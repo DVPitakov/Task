@@ -53,7 +53,9 @@ public class RocketREST {
             is = conn.getInputStream();
             Bitmap bitmap = null;
             if (responseCode == 200) {
-                bitmap = BitmapFactory.decodeStream(is);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 4;
+                bitmap = BitmapFactory.decodeStream(is, null, options);
             }
             return bitmap;
         }

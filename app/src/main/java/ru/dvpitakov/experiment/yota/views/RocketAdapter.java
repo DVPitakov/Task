@@ -76,7 +76,7 @@ public class RocketAdapter extends BaseAdapter {
                 , position
                 , launch.missionPatch
         );
-        
+
         TextView rocketName = convertView.findViewById(R.id.rocket_name);
         rocketName.setText(launch.rocket.rocketName);
         TextView launchDate = convertView.findViewById(R.id.launch_date);
