@@ -65,17 +65,25 @@ public class RocketAdapter extends BaseAdapter {
         }
         FrameLayout frameLayout = convertView.findViewById(R.id.image_container);
         frameLayout.removeAllViews();
-        ImageView imageView = new ImageView(frameLayout.getContext());
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        imageView.setScaleType(ImageView.ScaleType.FIT_START);
+        ImageView imageView = imageForUpdating.get(position);
+        if (imageView == null) {
+            Log.d("9999", "LLLL");
+            imageView = new ImageView(frameLayout.getContext());
+            imageView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            imageView.setScaleType(ImageView.ScaleType.FIT_START);
+            imageView.setImageResource(R.drawable.ic_android_black_24dp);
+            imageForUpdating.put(position, imageView);
+            ServiceHelper.getInstance().requestImage(parent.getContext()
+                    , position
+                    , launch.missionPatch
+            );
+        }
+        else {
+            ViewGroup parento = ((ViewGroup)imageView.getParent());
+            if(parento != null) parento.removeView(imageView);
+        }
         frameLayout.addView(imageView);
 
-        imageView.setImageResource(R.drawable.ic_android_black_24dp);
-        imageForUpdating.put(position, imageView);
-        ServiceHelper.getInstance().requestImage(parent.getContext()
-                , position
-                , launch.missionPatch
-        );
 
         TextView rocketName = convertView.findViewById(R.id.rocket_name);
         rocketName.setText(launch.rocket.rocketName);

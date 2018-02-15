@@ -43,8 +43,8 @@ public class RocketREST {
         InputStream is = null;
         try {
             HttpURLConnection conn = (HttpURLConnection) new URL(uri).openConnection();
-            conn.setReadTimeout(20000);
-            conn.setConnectTimeout(25000);
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(15000);
             conn.setRequestMethod("GET");
             conn.setDoInput(true);
             conn.setRequestProperty("Accept", "image/*");

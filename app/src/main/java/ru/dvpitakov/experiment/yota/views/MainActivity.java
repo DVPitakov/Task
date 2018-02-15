@@ -69,15 +69,13 @@ public class MainActivity extends AppCompatActivity implements ServiceHelper.Ser
                 int key = bundle.getInt(ServiceHelper.DATA_IMAGE_ID);
                 Bitmap bitmap = bundle.getParcelable(ServiceHelper.DATA_IMAGE);
                 ImageView target = imageForUpdating.get(key);
-                Log.d("tttttt", "KEY: "  + key + " bm:" + bitmap + " tg:" + target + "bitmspW" + bitmap.getWidth());
+                Log.d("9999", "GGG");
                 if(target != null && bitmap != null) {
                     target.setImageBitmap(bitmap);
-                    //imageForUpdating.delete(key);
                 }
                 break;
             }
             case ServiceHelper.ACTION_LAUCHES_RECEIVED: {
-                Log.d("88888", "ZZZZ");
                 ArrayList parcelables = bundle.getParcelableArrayList(ServiceHelper.DATA_LAUNCHS);
                 if (parcelables != null) {
                     this.launches.clear();
