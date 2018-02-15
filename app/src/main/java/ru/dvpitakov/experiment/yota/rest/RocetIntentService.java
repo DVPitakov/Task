@@ -37,7 +37,6 @@ public class RocetIntentService extends IntentService {
                 bundle.putString(ServiceHelper.ACTION, ServiceHelper.ACTION_LAUCHES_RECEIVED);
             }
             else if (ServiceHelper.ACTION_GET_BITMAP.equals(action)) {
-                Log.d("88888", "!!!");
                 Bitmap bitmap = rocketPocessor.getBitmap(intent.getStringExtra(ServiceHelper.IMAGE_URL));
                 bundle.putParcelable(ServiceHelper.DATA_IMAGE, bitmap);
                 bundle.putString(ServiceHelper.ACTION, ServiceHelper.ACTION_IMAGE_RECEIVED);

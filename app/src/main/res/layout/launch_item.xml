@@ -11,13 +11,11 @@
         android:background="@android:color/holo_blue_bright"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:layout_gravity="start|center_vertical"
-            android:id="@+id/mission_patch"
-            android:scaleType="fitStart"
+        <FrameLayout
+            android:id="@+id/image_container"
             android:layout_width="match_parent"
-            android:layout_height="80dp"/>
-
+            android:layout_height="80dp">
+        </FrameLayout>
         <TextView
             android:textColor="@android:color/black"
             android:textSize="20sp"
